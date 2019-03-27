@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="100"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imgForca"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/image1" />
+
+        <TextView
+            android:id="@+id/txtLetrasErradas"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="A - B - C"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/edtLetra"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="30"
+        android:gravity="center"
+        android:maxLength="1"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnverificar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="30"
+        android:background="@android:color/darker_gray"
+        android:text="VERIFICAR"
+        android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/txtPalavra"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="30"
+        android:gravity="center"
+        android:text=""
+        android:textSize="32sp" />
+
+</LinearLayout>
