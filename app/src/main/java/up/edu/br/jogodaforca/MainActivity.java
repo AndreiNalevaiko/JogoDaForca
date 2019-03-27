@@ -2,6 +2,7 @@ package up.edu.br.jogodaforca;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,7 +17,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView txtLetrasErradas, txtPalavra;
     private ImageView imgForca;
     private final String PALAVRA = "CASA";
-    private char[] vetorPalavraInteira, vetorPalpite;
+    private char[] vetorPalavraInteira;
+    private String[] vetorPalpite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,18 +33,30 @@ public class MainActivity extends AppCompatActivity {
 
         vetorPalavraInteira = PALAVRA.toCharArray();
 
-        for (int i = 0; i < vetorPalavraInteira.length; i++) {
-//            vetorPalavraInteira[i];
-        }
+        vetorPalpite = new String[PALAVRA.length()];
 
         btnVerificar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (PALAVRA.contains(edtLetra.getText().toString().toUpperCase())) {
-                    Toast.makeText(MainActivity.this, "SIM", Toast.LENGTH_SHORT).show();
+
+                String letra = edtLetra.getText().toString();
+
+                if (PALAVRA.contains(letra)) {
+                    for (int i = 0; i < vetorPalavraInteira.length; i++) {
+                        if (vetorPalavraInteira[i] == letra.charAt(0)) {
+                            vetorPalpite[i] = String.valueOf(vetorPalavraInteira[i]);
+                            Log.i("Index", String.valueOf(i));
+                        }
+                    }
                 } else {
                     Toast.makeText(MainActivity.this, "Não", Toast.LENGTH_SHORT).show();
                 }
+
+                String vetor = "";
+                for (int i = 0; i < vetorPalpite.length; i++) {
+                    vetor += vetorPalpite[i];
+                }
+                Log.i("index ", vetor);
             }
         });
 
