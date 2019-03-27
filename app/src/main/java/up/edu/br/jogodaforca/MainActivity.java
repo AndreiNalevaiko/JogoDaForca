@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView txtLetrasErradas, txtPalavra;
     private ImageView imgForca;
     private final String PALAVRA = "CASA";
+    private char[] vetorPalavraInteira, vetorPalpite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +29,16 @@ public class MainActivity extends AppCompatActivity {
         txtPalavra = findViewById(R.id.txtPalavra);
         imgForca = findViewById(R.id.imgForca);
 
+        vetorPalavraInteira = PALAVRA.toCharArray();
+
+        for (int i = 0; i < vetorPalavraInteira.length; i++) {
+//            vetorPalavraInteira[i];
+        }
+
         btnVerificar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (PALAVRA.contains(edtLetra.getText().toString().toLowerCase())) {
+                if (PALAVRA.contains(edtLetra.getText().toString().toUpperCase())) {
                     Toast.makeText(MainActivity.this, "SIM", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(MainActivity.this, "Não", Toast.LENGTH_SHORT).show();
