@@ -24,7 +24,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="A - B - C"
+            android:text=""
             android:textSize="32sp"
             android:textStyle="bold" />
 
